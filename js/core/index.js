@@ -59,6 +59,7 @@ require.config({
     navbar: '../../js/core/navbar/navbar',
     clusters: '../../js/core/clusters/clusters',
     jobs: '../../js/modules/jobs/jobs',
+    submitjob: '../../js/modules/submitjob/submitjob',
     racks: '../../js/modules/racks/racks',
     'jobs-map': '../../js/modules/jobs-map/jobs-map',
     partitions: '../../js/modules/partitions/partitions',
@@ -122,6 +123,7 @@ require([
   'navbar',
   'clusters',
   'jobs',
+  'submitjob',
   'racks',
   'jobs-map',
   'qos',
@@ -131,7 +133,7 @@ require([
   'gantt',
   'topology',
   'ajax-utils'
-], function (Page, config, token, user, Login, Navbar, Clusters, Jobs, Racks, JobsMap, QOS, Partitions, Reservations, d3View, Gantt, Topology) {
+], function (Page, config, token, user, Login, Navbar, Clusters, Jobs, SubmitJob, Racks, JobsMap, QOS, Partitions, Reservations, d3View, Gantt, Topology) {
   config = JSON.parse(config);
   var clusters = new Clusters(config);
   clusters.init();
@@ -170,6 +172,9 @@ require([
       break;
     case 'jobs':
       page = new Jobs(config);
+      break;
+    case 'submitjob':
+      page = new SubmitJob(config);
       break;
     case 'jobsmap':
       page = new JobsMap(config);

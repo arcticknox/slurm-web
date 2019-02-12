@@ -16,9 +16,9 @@
       </button>
       <span class="navbar-brand" id="brand-name">
         {{#if (isTrue clusterName)}}
-          {{clusterName}}
-          {{else}}
-            Slurm HPC Dashboard
+          <span class="cluster">{{clusterName}}</span>'s Slurm HPC Dashboard
+        {{else}}
+          Slurm HPC Dashboard
         {{/if}}
       </span>
     </div>
@@ -26,6 +26,9 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a id="menu-jobs" href="#">Jobs</a>
+        </li>
+         <li>
+          <a id="menu-submitjob" href="#">Submit Jobs</a>
         </li>
         <li>
           <a id="menu-racks" href="#">Racks</a>
