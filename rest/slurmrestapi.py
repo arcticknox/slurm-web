@@ -209,29 +209,29 @@ def get_reservations():
 
 
 
-# @app.route('/submitjob', methods=["POST", "OPTIONS"])
-# # @crossdomain(origin=origins, methods=['POST'],
-# #               headers=['Accept', 'Content-Type'])
-# # @authentication_verify()
-# # @cache()
-# def submitjob():
-#     if not request.json:
-#         abort(400)
-#     body = request.json
-#     a = pyslurm.job() 
-#     if not a:
-#         abort(401)
-#     s = Slurm(str(uuid.uuid4()), {"account": "my-account", "partition": "debug"})
-#     if not s:
-#         abort(402)
-#     print(body)
-#     x = s.run(body)
-#     if not x:
-#         abort(403)
-#     print(x)
-#     #result = submitjob(body)
-#     print("result",x)
-#     return jsonify(x)
+@app.route('/submitjob', methods=["POST", "OPTIONS"])
+@crossdomain(origin=origins, methods=['POST'],
+              headers=['Accept', 'Content-Type'])
+@authentication_verify()
+@cache()
+def submitjob():
+    if not request.json:
+        abort(400)
+    body = request.json
+    a = pyslurm.job() 
+    if not a:
+        abort(401)
+    s = Slurm(str(uuid.uuid4()), {"account": "my-account", "partition": "debug"})
+    if not s:
+        abort(402)
+    print(body)
+    x = s.run(body)
+    if not x:
+        abort(403)
+    print(x)
+    #result = submitjob(body)
+    print("result",x)
+    return jsonify(x)
 
 
 @app.route('/partitions', methods=['POST', 'OPTIONS'])
