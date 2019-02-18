@@ -9,7 +9,7 @@
                     document.getElementById("demo").innerHTML = this.responseText;
                 }
                 };
-            xmlhttp.open("POST", "http://18.208.128.234:8888/submitjob");
+            xmlhttp.open("POST", "/http://35.168.13.199:8888/submitjob");
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xmlhttp.send(JSON.stringify(x));
         }
