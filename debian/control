@@ -22,6 +22,7 @@ Depends:
  python-ldap,
  python-itsdangerous,
  python-redis
+ python-requests
 Description: Slurm Web Python REST API
  Slurm Web backend  REST API developed in Python using Flask web framework.
 
