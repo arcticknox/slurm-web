@@ -1,8 +1,10 @@
 <div id="submitjob">
     <script>
         function submitJob(){
-            x = document.getElementById("code").value;
-            console.log(x);
+            code = document.getElementById("code").value;
+            {{!-- kwargs = document.getElementById("query").value; --}}
+            {{!-- payload = { "code": code, "kwargs": kwargs }; --}}
+            console.log(code);
             var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
                 xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -11,7 +13,7 @@
                 };
             xmlhttp.open("POST", "http://35.168.13.199:8888/submitjob");
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xmlhttp.send(JSON.stringify(x));
+            xmlhttp.send(JSON.stringify(code));
         }
     </script>
 
@@ -20,14 +22,9 @@
     </h1>
 
     <div class="form-group">
-        <label for="usr">Account Name</label>
-        <input type="text" class="form-control" id="usr">
+        <label for="query">Sbatch Parameters</label>
+        <input type="text" class="form-control" id="query">
 
-        <label for="pwd">Cores:</label>
-        <input type="text" class="form-control" id="cores">
-
-        <label for="pwd">Memory:</label>
-        <input type="text" class="form-control" id="memory">
     </div>    
      <div class="form-group">
         <label for="command">Command:</label>
