@@ -55,7 +55,7 @@ define([
             submitjob: submitjob
           };
 
-          $('#main').append(template(context));
+          // $('#main').append(template(context));
           tablesorterUtils.eraseEmptyColumn('.tablesorter');
           $('.tablesorter').tablesorter(self.tablesorterOptions);
         });
