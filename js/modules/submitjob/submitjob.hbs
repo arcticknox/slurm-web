@@ -4,7 +4,7 @@
             code = document.getElementById("code").value;
             kargs = document.getElementById("query").value;
             kargs = kargs.split("|");
-            payload = { "code": code};
+            payload = {"code": code};
             kargs.forEach((args)=>{
                 var p = args.split(":");
                 payload[p[0]] = p[1];
