@@ -18,7 +18,7 @@
                     document.getElementById("demo").innerHTML = this.responseText;
                 }
                 };
-            xmlhttp.open("POST", "/submitjob");
+            xmlhttp.open("POST", "http://35.168.13.199:8888/submitjob");
             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xmlhttp.send(JSON.stringify(payload));
         }
@@ -30,12 +30,12 @@
 
     <div class="form-group">
         <label for="query">Sbatch Parameters</label>
-        <input placeholder="account:myacct" type="text" class="form-control" id="query">
+        <input type="text" class="form-control" id="query">
 
     </div>    
      <div class="form-group">
         <label for="command">Command:</label>
-            <textarea class="form-control" rows="20" cols="80" id="code"></textarea>
+            <textarea placeholder="account:myacct" class="form-control" rows="20" cols="80" id="code"></textarea>
             <p id="demo" rows="20" cols="80" name="demo"/>
         
         <br>
