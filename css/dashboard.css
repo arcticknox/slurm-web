@@ -24,7 +24,7 @@ canvas {
  * Hide default border to remove 1px line.
  */
 .navbar-fixed-top {
-  background-image: url(../slurm/static/logo.png);
+  background-image: url(http://35.168.13.199:8081/slurm/static/logo.png);
   background-repeat: no-repeat;
   border: 0;
 }
