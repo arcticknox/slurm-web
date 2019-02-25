@@ -126,8 +126,8 @@ define([
       };
 
       $('body').prepend(template(context));
-      $('.navbar-fixed-top').css('background-image', 'url(/slurm/'+config.LOGOURL+')'); //define logo path
-
+      $('.navbar-fixed-top').css('background-image', 'url('+config.LOGOURL+')'); //define logo path
+      console.log(">>>>>>>>>LOGOURL", config.LOGOURL);
       resizeNavbar();
 
       $(window).on('resize', resizeNavbar);
