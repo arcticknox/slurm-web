@@ -70,8 +70,9 @@ define([
           var context = {
             jobId: jobId,
             job: job
+            
           };
-
+          console.log(">>>>JobID", jobId);
           $('body').append(modalCoreTemplate(context));
           $('#modal-core').on('hidden.bs.modal', closeModalCore);
           $('#modal-core').modal('show');
@@ -103,6 +104,7 @@ define([
             nodeId: nodeId,
             jobs: jobs
           };
+          console.log(">>>jobsbynode", nodeId);
 
           $('body').append(modalNodeTemplate(context));
           $('#modal-node').on('hidden.bs.modal', closeModalNode);
@@ -180,6 +182,7 @@ define([
           });
 
           d2LegendDraw.drawLegend('jobs-map');
+          console.log(">>>>>d2Draw....");
         });
     };
 
