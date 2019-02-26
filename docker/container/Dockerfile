@@ -95,7 +95,7 @@ RUN cd /usr/src && \
 RUN cd /usr/src && \
     git clone https://github.com/arcticknox/slurm-web.git && \
     cd slurm-web && \
-    git checkout kaushik && \
+    git checkout webui && \
     debuild -us -uc && \
     dpkg -i ../slurm-web-*deb
 
