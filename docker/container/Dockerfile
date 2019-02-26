@@ -118,6 +118,11 @@ RUN chown munge: /var/log/munge /var/lib/munge && \
 COPY munge.sh /etc/service/munge/run
 RUN chmod +x /etc/service/munge/run
 
+# Install Pip and Requests
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python get-pip.py
+RUN pip install requests
+
 
 # Cleanup
 RUN apt-get clean
