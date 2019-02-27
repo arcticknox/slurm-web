@@ -22,6 +22,9 @@ define([
   'handlebars'
 ], function (Handlebars) {
   Handlebars.registerHelper('join', function (item, separator) {
+    console.log('ITEM', item);
+    console.log('SEPERATOR', separator);
+    console.log(item.join(separator));
     return item.join(separator);
   });
 });
