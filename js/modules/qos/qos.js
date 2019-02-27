@@ -50,10 +50,11 @@ define([
       $.ajax(config.cluster.api.url + config.cluster.api.path + '/qos', options)
         .success(function (qos) {
           var context;
-
+            console.log("qos",qos);
           if (qos.error) {
             context = {
               error: qos.error
+
             }
             if (self.interval) {
               clearInterval(self.interval);
