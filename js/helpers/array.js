@@ -24,10 +24,6 @@ define([
   Handlebars.registerHelper('join', function (item, separator) {
     list = [];
     list.push(item);
-    console.log('ITEM', item);
-    console.log('SEPERATOR', separator);
-    console.log(list.join(separator));
-    
     return list.join(separator);
   });
 });
