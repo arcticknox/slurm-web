@@ -11,6 +11,7 @@
           <th>Start</th>
           <th>QOS</th>
           <th>Partition</th>
+          <th>Cluster</th>>
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@
             <td>{{printStartTime start_time eligible_time job_state}}</td>
             <td data-qos="{{qos}} (qos)">{{qos}}</td>
             <td data-partition="{{partition}} (partition)">{{partition}}</td>
+            <td>{{cluster}}</td>
           </tr>
         {{/each}}
       </tbody>
